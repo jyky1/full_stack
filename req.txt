@@ -4,3 +4,4 @@ djangorestframework
 python-decouple
 python-slugify
 drf-yasg
+django-filter
