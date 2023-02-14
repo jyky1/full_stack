@@ -49,7 +49,7 @@ class User(AbstractUser):
     username = models.CharField(max_length=60, blank=True)
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=13, blank=True)
-    country = models.CharField(max_length=300, choices=CHOICES, blank=True)
+    country = models.CharField(max_length=300, choices=CHOICES)
     name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=55, blank=True)
     password = models.CharField(max_length=100)
