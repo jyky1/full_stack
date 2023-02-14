@@ -46,14 +46,14 @@ INSTALLED_APPS = [
     'news',
     'resume',
     'vacancy',
-    'about_us',
+    'game',
+    
 
     #librari
     'rest_framework',
     'drf_yasg',
-    'python-decouple',
-    'ptyhon-slogify',
-    'django-filters'
+    # 'ptyhon-slugify',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
