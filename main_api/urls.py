@@ -23,8 +23,8 @@ schema_view = get_schema_view(openapi.Info(title='пользуйтесь на з
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('docks/', schema_view.with_ui('swagger')),
-    # path('', include('account.urls')),
-    # path('', include('game.urls')),
+    path('', include('account.urls')),
+    path('', include('game.urls')),
     path('', include('resume.urls')),
     # path('', include('news.urls')),
     # path('', include('vacancy.urls')),

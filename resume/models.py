@@ -6,21 +6,23 @@ from account.models import User
 
 class Resume(models.Model):
     CHOICES = (
-        (1, 'from media'),
-        (2, 'sarafannor radio'),
-        (3, 'other')
+        ('from media', 'from media'),
+        ('from sanfransico', 'sarafannor radio'),
+        ('my answer', 'other')
     )
-    name = models.ForeignKey(User, on_delete=models.CASCADE, related_name='resume')
-    email = models.ForeignKey(User, on_delete=models.CASCADE, related_name='resume')
-    phone = models.ForeignKey(User, on_delete=models.CASCADE, related_name='resume')
-    city = models.ForeignKey(User, on_delete=models.CASCADE, related_name='resume')
-    git_hub = models.URLField(blank=True)
+    # name = models.ForeignKey(User, on_delete=models.CASCADE, related_name='resume_name')
+    # email = models.ForeignKey(User, on_delete=models.CASCADE, related_name='resume_email')
+    # phone = models.ForeignKey(User, on_delete=models.CASCADE, related_name='resume_phone')
+    # city = models.ForeignKey(User, on_delete=models.CASCADE, related_name='resume_city')
+    name = models.CharField(max_length=15)
+    email = models.CharField(max_length=30)
+    git_hub = models.URLField()
     description = models.TextField()
-    resume = models.FileField(blank=True)
+    resume = models.FileField()
     about_us = models.TextField(choices=CHOICES)
 
     def __str__(self) -> str:
-        return self.resume.name
+        return self.name
 
     class Meta:
         verbose_name = 'Resume'
