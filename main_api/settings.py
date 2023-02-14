@@ -39,6 +39,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #our apps
+    'account',
+    'company',
+    'news',
+    'resume',
+    'vacancy',
+    'about_us',
+
+    #librari
+    'rest_framework',
+    'drf_yasg',
+    # 'python-slugify',
+    'django_filters',
+    # 'python-decouple',
 ]
 
 MIDDLEWARE = [
