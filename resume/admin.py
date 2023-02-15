@@ -3,4 +3,7 @@ from django.contrib import admin
 from .models import Resume
 
 
-admin.site.register(Resume)
+class ResumeInline(admin.TabularInline):
+
+    model = Resume
+
