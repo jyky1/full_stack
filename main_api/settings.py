@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+AUTH_USER_MODEL = 'account.User'
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,15 +47,14 @@ INSTALLED_APPS = [
     'news',
     'resume',
     'vacancy',
-
     'game',
 
     #librari
     'rest_framework',
     'drf_yasg',
     'django_filters',
-    'python_slugify',
-    
+    'slugify',
+
 ]
 
 MIDDLEWARE = [
