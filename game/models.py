@@ -37,4 +37,7 @@ class Rating(models.Model):
     def __str__(self) -> str:
         return f'{self.rating} -> {self.game.name}'
 
-    
+    def avg_rating(self):
+        from django.db.models import Avg
+        result = self.ratings.aggregate(Avg('rating'))
+        return result['rating__avg']

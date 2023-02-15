@@ -1,5 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import AllowAny
+from rest_framework.pagination import PageNumberPagination
 
 from .serializers import ResumeSerializer
 from .models import Resume
@@ -15,6 +16,15 @@ class UserPermissionMixin:
             permissions=[AllowAny,]
         return [permission() for permission in permissions]
 
+    
+
+class LargeResultsSetPagination(PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    max_page_size = 10
+
+
 class ResumeView(UserPermissionMixin, ModelViewSet):
     queryset=Resume.objects.all()
-    serializer_class=ResumeSerializer
+    serializer_class = ResumeSerializer
+    pagination_class = LargeResultsSetPagination
