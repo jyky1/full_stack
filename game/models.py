@@ -1,6 +1,6 @@
 from django.db import models
-
 from slugify import slugify
+
 
 class Game(models.Model):
     name = models.CharField(max_length=30, unique=True)
@@ -12,13 +12,14 @@ class Game(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
-        super().save()
+        super().save(*args, **kwargs)
 
     def __str__(self) -> str:
         return self.name
 
 
     class Meta:
+        ordering = ['-created_at']
         verbose_name = 'Game'
         verbose_name_plural = 'Games'
 

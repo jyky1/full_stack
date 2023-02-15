@@ -18,7 +18,7 @@ class Resume(models.Model):
     email = models.CharField(max_length=30)
     git_hub = models.URLField()
     description = models.TextField()
-    resume = models.FileField()
+    resume = models.FileField(upload_to='vacancy_resume/')
     about_us = models.TextField(choices=CHOICES)
 
     def __str__(self) -> str:
