@@ -48,13 +48,12 @@ INSTALLED_APPS = [
     'resume',
     'vacancy',
 
+    'game',
 
     #librari
     'rest_framework',
     'drf_yasg',
-    # 'python-slugify',
     'django_filters',
-    # 'python-decouple',
 ]
 
 MIDDLEWARE = [

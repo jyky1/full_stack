@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
+from .serializers import ResumeSerializer
+from .models import Resume
+
+
+class ResumeView(ModelViewSet):
+    queryset=Resume.objects.all()
+    serializer_class=ResumeSerializer

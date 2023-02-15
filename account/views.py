@@ -9,13 +9,6 @@ from rest_framework.response import Response
 
 
 
-# class OrderView(ModelViewSet):
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
-#     permission_classes = [IsAuthenticated]
-
-
-
 class RegisterView(APIView):
 
     @swagger_auto_schema(request_body=RegisterSerializer())

@@ -9,15 +9,3 @@ urlpatterns = [
     path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
 
-
-# from django.urls import path, include
-# from .views import RegisterView, ActivationView
-# from rest_framework.routers import DefaultRouter
-
-# router = DefaultRouter()
-# router.register('rating', RegisterView)
-# router.register('comments', ActivationView)
-
-# urlpatterns = [
-#     path('',  include(router.urls)),
-# ]
