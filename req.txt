@@ -6,3 +6,5 @@ python-slugify
 drf-yasg
 django-filter
 simplejwt
+celery
+djangorestframework-simplejwt
