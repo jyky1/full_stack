@@ -63,6 +63,8 @@ INSTALLED_APPS = [
     'drf_yasg',
     'django_filters',
     'slugify',
+    'rest_framework_simplejwt.token_blacklist',
+    'rest_framework_simplejwt',
 
 ]
 
@@ -166,12 +168,12 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=200000),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=180),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
-CELERY_BROKER_URL = "redis://localhost:6379"
-CELERY_RESULT_BACKEND = "redis://localhost:6379"
+# CELERY_BROKER_URL = "redis://localhost:6379"
+# CELERY_RESULT_BACKEND = "redis://localhost:6379"
 
 AUTH_USER_MODEL = 'account.User'
 

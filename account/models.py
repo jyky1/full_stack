@@ -54,6 +54,7 @@ class User(AbstractUser):
     last_name = models.CharField(max_length=55, blank=True)
     password = models.CharField(max_length=100)
     password_confirm = models.CharField(max_length=100)
+    activation_code = models.CharField(max_length=30, blank=True)
 
     objects = UserManager()
     USERNAME_FIELD = 'email'
