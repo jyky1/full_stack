@@ -4,7 +4,7 @@ from account.models import User
 
 
 class News(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to='for_photo/')
     date = models.DateField(auto_now_add=True)
     title = models.CharField(max_length=15)
     description = models.TextField()

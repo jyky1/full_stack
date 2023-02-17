@@ -53,7 +53,9 @@ INSTALLED_APPS = [
     'drf_yasg',
     'django_filters',
     'slugify',
-
+    'rest_framework_simplejwt.token_blacklist',
+    'rest_framework_simplejwt',
+    
 ]
 
 MIDDLEWARE = [
@@ -150,12 +152,6 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
-
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=200000),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-}
-
 CELERY_BROKER_URL = "redis://localhost:6379"
 CELERY_RESULT_BACKEND = "redis://localhost:6379"
 
@@ -166,7 +162,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 1,
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
-    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
 }
 
 SIMPLE_JWT = {
@@ -174,3 +169,7 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1)
 }
 
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'http://domain.com',
+]

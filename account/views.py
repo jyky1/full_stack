@@ -1,6 +1,3 @@
-from rest_framework.viewsets import ModelViewSet
-from .models import User
-from .serializers import ChangePasswordSerializer, ForgotPasswordCompleteSerializer, ForgotPaswordSerializer, RegisterSerializer
 from rest_framework.permissions import IsAuthenticated
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework.views import APIView
@@ -8,6 +5,9 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import status
 
+
+from .models import User
+from .serializers import ChangePasswordSerializer, ForgotPasswordCompleteSerializer, ForgotPaswordSerializer, RegisterSerializer
 
 
 class RegisterView(APIView):
