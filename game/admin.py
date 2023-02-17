@@ -2,14 +2,16 @@ from django.contrib import admin
 
 from .models import Game, Rating
 
+admin.site.register(Game)
 
-class GameInline(admin.TabularInline):
+
+# class GameInline(admin.TabularInline):
     
-    model = Game
+#     model = Game
 
 
-class GameAdmin(admin.ModelAdmin):
-    list_filter = ['rating__avg']
-    search_fields = ['slug']
-    list_display = ['name', 'rating_avg', 'description']
-    inlines = [GameInline]
+# class GameAdmin(admin.ModelAdmin):
+#     list_filter = ['rating__avg']
+#     search_fields = ['slug']
+#     list_display = ['name', 'rating_avg', 'description']
+#     inlines = [GameInline]

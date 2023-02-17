@@ -18,7 +18,6 @@ from django.urls import path, include
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from django.conf import settings
-
 from django.conf.urls.static import static
 
 
@@ -30,8 +29,8 @@ urlpatterns = [
     path('', include('account.urls')),
     path('', include('game.urls')),
     path('', include('resume.urls')),
-    # path('', include('news.urls')),
-    # path('', include('vacancy.urls')),
+    path('', include('news.urls')),
+    path('', include('vacancy.urls')),
     # path('', include('company.urls')),
 ]
 

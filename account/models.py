@@ -54,6 +54,7 @@ class User(AbstractUser):
     last_name = models.CharField(max_length=55, blank=True)
     password = models.CharField(max_length=100)
     password_confirm = models.CharField(max_length=100)
+    activation_code = models.CharField(max_length=30, blank=True)
 
     objects = UserManager()
     USERNAME_FIELD = 'email'
@@ -65,5 +66,10 @@ class User(AbstractUser):
     def create_activation_code(self):
         code = get_random_string(length=10, allowed_chars='1234567890#!@$%^&*_')
         self.activation_code = code
-    # password = models.PositiveIntegerField()
+
+    def has_module_perms(self, app_label=None):
+        return self.is_staff
+
+    def has_perm(self, app_label=None):
+        return self.is_staff
     
