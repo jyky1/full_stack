@@ -24,8 +24,6 @@ class ActivationView(APIView):
 
     def get(self, request, email, activation_code):
         user = User.objects.filter(email=email, activation_code=activation_code,).first()
-        print(activation_code)
-        print('11111111111111111111111111')
         if not user:
             return Response('User does not exist', 400)
         user.activation_code = ''
@@ -57,7 +55,7 @@ class ChangePasswordView(APIView):
         if serializer.is_valid(raise_exception=True):
             serializer.set_new_password()
 
-        return Response('Status: 200. Пароль успешно обновлен')
+        return Response('Пароль успешно обновлен')
 
 
 class ForgotPasswordView(APIView):

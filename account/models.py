@@ -67,4 +67,10 @@ class User(AbstractUser):
         code = get_random_string(length=10, allowed_chars='1234567890#!@$%^&*_')
         self.activation_code = code
     # password = models.PositiveIntegerField()
+
+    def has_module_perms(self, app_label=None):
+        return self.is_staff
+
+    def has_perm(self, app_label=None):
+        return self.is_staff
     

@@ -8,3 +8,4 @@ django-filter
 simplejwt
 celery
 djangorestframework-simplejwt
+redis
