@@ -4,6 +4,7 @@ from django.db.models import Avg
 from .models import Game, Rating
 
 class GameSerializer(serializers.ModelSerializer):
+    company = serializers.ReadOnlyField()
 
 
     class Meta:

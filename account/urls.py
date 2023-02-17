@@ -1,4 +1,5 @@
 from django.urls import path
+from .views import ChangePasswordView, ForgotPasswordCompleteView, ForgotPasswordView, RegisterView, ActivationView, LogoutView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from .views import ChangePasswordView, ForgotPasswordCompleteView, ForgotPasswordView, RegisterView, ActivationView, LogoutView
