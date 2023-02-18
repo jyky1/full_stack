@@ -31,7 +31,7 @@ urlpatterns = [
     path('', include('resume.urls')),
     path('', include('news.urls')),
     path('', include('vacancy.urls')),
-    # path('', include('company.urls')),
+    path('', include('company.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
